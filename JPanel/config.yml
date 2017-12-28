@@ -1,0 +1,11 @@
+http-port: 8081
+debug-mode: false
+use-ssl: false
+keystore-name: ''
+keystore-password: ''
+users:
+  admin:
+    password: 1000:b44d36c055fecc328d7af8bc5f5d250a:369722a8df103a9cf7bac0f20bcef8b9345fbcb184e1615ba7b835c5a762649402e431d5bba920793cf0805a4e116bff1d8e4ca9bc31222b8ccecec0ba008432
+    canEditFiles: true
+    canChangeGroups: true
+    canSendCommands: true

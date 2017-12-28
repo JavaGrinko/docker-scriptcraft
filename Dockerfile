@@ -10,22 +10,25 @@ run apt-get update && \
 # Spigot (Minecraft server)
 add https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/artifact/target/BuildTools.jar /opt/minecraft/BuildTools.jar
 workdir /opt/minecraft/
-run java -jar BuildTools.jar --rev 1.11.2 .
+run java -jar BuildTools.jar --rev 1.12.2 .
 
+# Plugins
 add http://scriptcraftjs.org/download/latest/scriptcraft-3.2.1/scriptcraft.jar /opt/minecraft/plugins/scriptcraft.jar
+add https://addons-origin.cursecdn.com/files/942/892/JPanel.jar /opt/minecraft/plugins/JPanel.jar
+add https://build.true-games.org/job/ProtocolSupport/176/artifact/target/ProtocolSupport.jar /opt/minecraft/plugins/ProtocolSupport.jar
 
-run echo "eula=true" > /opt/minecraft/eula.txt
+# Configs
 add server.properties /opt/minecraft/server.properties
+add JPanel/config.yml /opt/minecraft/plugins/JPanel/config.yml
 #add config.yml /opt/minecraft/plugins/scriptcraft/config.yml
 
-# a default ssh access to upload js 
-add sshd_config /etc/ssh/sshd_config
+run echo "eula=true" > /opt/minecraft/eula.txt
 run mkdir -p /opt/minecraft/scriptcraft/players/
 run echo "root:minecraft" | chpasswd
 
-add start /start
-run chmod +x /start
+add start.sh /start.sh
+run chmod +x /start.sh
 
 expose 25565 22
 volume ["/minecraft/"]
-cmd /start
+cmd /start.sh
