@@ -20,15 +20,13 @@ add https://build.true-games.org/job/ProtocolSupport/176/artifact/target/Protoco
 # Configs
 add server.properties /opt/minecraft/server.properties
 add JPanel/config.yml /opt/minecraft/plugins/JPanel/config.yml
+add server-icon.png /opt/minecraft/server-icon.png
 #add config.yml /opt/minecraft/plugins/scriptcraft/config.yml
 
 run echo "eula=true" > /opt/minecraft/eula.txt
 run mkdir -p /opt/minecraft/scriptcraft/players/
 run echo "root:minecraft" | chpasswd
 
-add start.sh /start.sh
-run chmod +x /start.sh
+expose 25565
 
-expose 25565 22
-volume ["/minecraft/"]
-cmd /start.sh
+ENTRYPOINT echo "jsp classroom on" | /usr/bin/java -Xmx8192M -jar spigot-1.12.2.jar
