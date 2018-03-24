@@ -16,7 +16,7 @@ run java -jar BuildTools.jar --rev 1.12.2 .
 add https://addons-origin.cursecdn.com/files/942/892/JPanel.jar /opt/minecraft/plugins/JPanel.jar
 add https://build.true-games.org/job/ProtocolSupport/176/artifact/target/ProtocolSupport.jar /opt/minecraft/plugins/ProtocolSupport.jar
 add https://addons-origin.cursecdn.com/files/2466/685/PlugMan.jar /opt/minecraft/plugins/PlugMan.jar
-add https://bintray.com/javagrinko/maven/download_file?file_path=ru%2Fminejs%2Fminejs-bukkit-plugin%2F1.0.0%2Fminejs-bukkit-plugin-1.0.0.jar /opt/minecraft/plugins/MineJS.jar
+add https://dl.bintray.com/javagrinko/maven/ru/minejs/minejs-bukkit-plugin/${MINE_JS_VERSION}/:minejs-bukkit-plugin-${MINE_JS_VERSION}.jar /opt/minecraft/plugins/PlugMan.jar
 #add https://addons-origin.cursecdn.com/files/909/154/PermissionsEx-1.23.4.jar /opt/minecraft/plugins/PermissionsEx.jar
 #add https://addons-origin.cursecdn.com/files/2416/984/ChatEx.jar /opt/minecraft/plugins/ChatEx.jar
 #add https://addons-origin.cursecdn.com/files/894/359/Vault.jar /opt/minecraft/plugins/Vault.jar
