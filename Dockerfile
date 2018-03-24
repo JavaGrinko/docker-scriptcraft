@@ -1,5 +1,6 @@
 from debian:sid
 env DEBIAN_FRONTEND noninteractive
+ARG MINE_JS_VERSION
 run sed -e 's/deb.debian.org/debian.mirrors.ovh.net/g' -i /etc/apt/sources.list
 run apt-get update && \
     apt-get dist-upgrade -y && \
