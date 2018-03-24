@@ -1,6 +1,5 @@
 from debian:sid
 env DEBIAN_FRONTEND noninteractive
-ARG MINE_JS_VERSION
 run sed -e 's/deb.debian.org/debian.mirrors.ovh.net/g' -i /etc/apt/sources.list
 run apt-get update && \
     apt-get dist-upgrade -y && \
@@ -13,6 +12,7 @@ add https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/artifact
 workdir /opt/minecraft/
 run java -jar BuildTools.jar --rev 1.12.2 .
 
+ARG MINE_JS_VERSION
 # Plugins
 add https://addons-origin.cursecdn.com/files/942/892/JPanel.jar /opt/minecraft/plugins/JPanel.jar
 add https://build.true-games.org/job/ProtocolSupport/176/artifact/target/ProtocolSupport.jar /opt/minecraft/plugins/ProtocolSupport.jar
