@@ -1,0 +1,6 @@
+oauth2:
+  base-url: http://minejs.ru:8080
+  client-id: react-ui
+  client-secret: react-secret
+  grant-path: /oauth/token
+  revoke-path: /oauth/revoke

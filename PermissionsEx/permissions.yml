@@ -1,0 +1,31 @@
+groups:
+  default:
+    options:
+      default: true
+    permissions:
+    - oauth2.login
+  ADMIN:
+    options:
+      prefix: '&4[ADMIN]&7 '
+    permissions:
+    - -oauth2.login
+    - '*'
+  STUDENT:
+    options:
+      prefix: '[STUDENT] '
+    permissions:
+    - -oauth2.login
+    - '*'
+  TEACHER:
+    options:
+      prefix: '[TEACHER] '
+    permissions:
+    - -oauth2.login
+    - '*'
+  PARENT:
+    options:
+      prefix: '[PARENT] '
+    permissions:
+    - -oauth2.login
+    - '*'
+schema-version: 1
