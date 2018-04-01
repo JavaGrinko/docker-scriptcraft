@@ -2,7 +2,7 @@ version: '3'
 services:
   web-ui:
     container_name: web-ui
-    image: web-ui
+    image: javagrinko-docker-registry.bintray.io/minejs-web-ui
     ports:
       - 80:3000
     restart: on-failure
@@ -10,14 +10,7 @@ services:
       - REACT_APP_SERVER_BASE=http://192.168.99.100:8080
   minejs-service:
     container_name: service
-    image: service
+    image: javagrinko-docker-registry.bintray.io/minejs-service
     ports:
       - 8080:8080
     restart: on-failure
-#  minejs-server:
-#    container_name: minejs-server
-#    image: server
-#    network_mode: "host"
-#    volumes:
-#      - ~/world:/opt/minecraft/world
-#    restart: on-failure
