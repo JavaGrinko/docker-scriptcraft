@@ -6,26 +6,20 @@ groups:
     - oauth2.login
   ADMIN:
     options:
-      prefix: '&4[ADMIN]&7 '
+      prefix: '&4[Админ]&7 '
     permissions:
-    - -oauth2.login
+    - oauth2.logout
     - '*'
   STUDENT:
     options:
-      prefix: '[STUDENT] '
+      prefix: '[Ученик] '
     permissions:
-    - -oauth2.login
+    - oauth2.logout
     - '*'
   TEACHER:
     options:
-      prefix: '[TEACHER] '
+      prefix: '[Учитель] '
     permissions:
-    - -oauth2.login
-    - '*'
-  PARENT:
-    options:
-      prefix: '[PARENT] '
-    permissions:
-    - -oauth2.login
+    - oauth2.logout
     - '*'
 schema-version: 1

@@ -13,15 +13,16 @@ workdir /opt/minecraft/
 run java -jar BuildTools.jar --rev 1.12.2 .
 
 ARG MINE_JS_VERSION
+ARG OAUTH_VERSION=1.0.0
 # Plugins
 add https://addons-origin.cursecdn.com/files/942/892/JPanel.jar /opt/minecraft/plugins/JPanel.jar
 add https://build.true-games.org/job/ProtocolSupport/176/artifact/target/ProtocolSupport.jar /opt/minecraft/plugins/ProtocolSupport.jar
 add https://addons-origin.cursecdn.com/files/2466/685/PlugMan.jar /opt/minecraft/plugins/PlugMan.jar
-add https://dl.bintray.com/javagrinko/maven/ru/minejs/minejs-bukkit-plugin/$MINE_JS_VERSION/minejs-bukkit-plugin-$MINE_JS_VERSION.jar /opt/minecraft/plugins/PlugMan.jar
-#add https://addons-origin.cursecdn.com/files/909/154/PermissionsEx-1.23.4.jar /opt/minecraft/plugins/PermissionsEx.jar
-#add https://addons-origin.cursecdn.com/files/2416/984/ChatEx.jar /opt/minecraft/plugins/ChatEx.jar
-#add https://addons-origin.cursecdn.com/files/894/359/Vault.jar /opt/minecraft/plugins/Vault.jar
-#add https://raw.githubusercontent.com/JavaGrinko/oauth2-bukkit/master/build/libs/oauth2-bukkit-1.0.0.jar /opt/minecraft/plugins/OAuth2.jar
+add https://dl.bintray.com/javagrinko/maven/ru/minejs/minejs-bukkit-plugin/$MINE_JS_VERSION/minejs-bukkit-plugin-$MINE_JS_VERSION.jar /opt/minecraft/plugins/MineJS.jar
+add https://addons-origin.cursecdn.com/files/909/154/PermissionsEx-1.23.4.jar /opt/minecraft/plugins/PermissionsEx.jar
+add https://addons-origin.cursecdn.com/files/2416/984/ChatEx.jar /opt/minecraft/plugins/ChatEx.jar
+add https://addons-origin.cursecdn.com/files/894/359/Vault.jar /opt/minecraft/plugins/Vault.jar
+add https://dl.bintray.com/javagrinko/maven/ru/minejs/oauth2-bukkit-plugin/$OAUTH_VERSION/oauth2-bukkit-plugin-$OAUTH_VERSION.jar /opt/minecraft/plugins/OAuth2.jar
 #add https://addons-origin.cursecdn.com/files/780/922/Essentials.zip /opt/Essentials.zip
 #run unzip -q /opt/Essentials.zip -d /opt && \
 #    rm /opt/Essentials.zip && \
@@ -32,6 +33,7 @@ add server.properties /opt/minecraft/server.properties
 add JPanel/config.yml /opt/minecraft/plugins/JPanel/config.yml
 add PermissionsEx/permissions.yml /opt/minecraft/plugins/PermissionsEx/permissions.yml
 add OAuth2 /opt/minecraft/plugins/OAuth2
+add MineJS /opt/minecraft/plugins/MineJS
 add server-icon.png /opt/minecraft/server-icon.png
 
 #add config.yml /opt/minecraft/plugins/scriptcraft/config.yml
@@ -41,5 +43,5 @@ run mkdir -p /opt/minecraft/scriptcraft/players/
 
 expose 25565 19132
 
-ENTRYPOINT echo "jsp classroom on" | /usr/bin/java -Xmx1024M -jar spigot-1.12.2.jar
-CMD java -jar /opt/minecraft/dragonproxy.jar
+ENTRYPOINT /usr/bin/java -Xmx1024M -jar spigot-1.12.2.jar
+#CMD java -jar /opt/minecraft/dragonproxy.jar
