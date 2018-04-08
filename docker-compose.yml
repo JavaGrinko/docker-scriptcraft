@@ -4,10 +4,10 @@ services:
     container_name: web-ui
     image: javagrinko-docker-registry.bintray.io/minejs-web-ui
     ports:
-      - 80:3000
+      - 80:5000
     restart: on-failure
     environment:
-      - REACT_APP_SERVER_BASE=http://192.168.99.100:8080
+      - REACT_APP_SERVER_BASE=http://ec2-18-188-167-97.us-east-2.compute.amazonaws.com
   minejs-service:
     container_name: service
     image: javagrinko-docker-registry.bintray.io/minejs-service
